@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7C1920EC187B0A41008D74B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1920EB187B0A41008D74B2 /* Foundation.framework */; };
+		7C1920EE187B0A41008D74B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1920ED187B0A41008D74B2 /* CoreGraphics.framework */; };
+		7C1920F0187B0A41008D74B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1920EF187B0A41008D74B2 /* UIKit.framework */; };
+		7C1920F6187B0A41008D74B2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C1920F4187B0A41008D74B2 /* InfoPlist.strings */; };
+		7C1920F8187B0A41008D74B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1920F7187B0A41008D74B2 /* main.m */; };
+		7C1920FC187B0A41008D74B2 /* FKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1920FB187B0A41008D74B2 /* FKAppDelegate.m */; };
+		7C192105187B0A41008D74B2 /* FKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C192104187B0A41008D74B2 /* FKViewController.m */; };
+		7C192107187B0A41008D74B2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C192106187B0A41008D74B2 /* Images.xcassets */; };
+		7C19210E187B0A41008D74B2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C19210D187B0A41008D74B2 /* XCTest.framework */; };
+		7C19210F187B0A41008D74B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1920EB187B0A41008D74B2 /* Foundation.framework */; };
+		7C192110187B0A41008D74B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1920EF187B0A41008D74B2 /* UIKit.framework */; };
+		7C192118187B0A41008D74B2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C192116187B0A41008D74B2 /* InfoPlist.strings */; };
+		7C19211A187B0A41008D74B2 /* NOAA_Forecast_KitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C192119187B0A41008D74B2 /* NOAA_Forecast_KitTests.m */; };
+		7C19213A187BA514008D74B2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C192139187BA514008D74B2 /* CoreData.framework */; };
+		7C19214C187EA43E008D74B2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C19214B187EA43E008D74B2 /* CoreLocation.framework */; };
+		7C19215F187EDEAC008D74B2 /* FKDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C192151187EDEAC008D74B2 /* FKDataManager.m */; };
+		7C192160187EDEAC008D74B2 /* FKDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C192152187EDEAC008D74B2 /* FKDataModel.xcdatamodeld */; };
+		7C192161187EDEAC008D74B2 /* FKForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C192155187EDEAC008D74B2 /* FKForecast.m */; };
+		7C192162187EDEAC008D74B2 /* FKForecastRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C192157187EDEAC008D74B2 /* FKForecastRequester.m */; };
+		7C192163187EDEAC008D74B2 /* FKLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C192159187EDEAC008D74B2 /* FKLocation.m */; };
+		7C192164187EDEAC008D74B2 /* FKResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C19215B187EDEAC008D74B2 /* FKResponseParser.m */; };
+		7C192165187EDEAC008D74B2 /* FKStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C19215D187EDEAC008D74B2 /* FKStore.m */; };
+		7C192166187EDEAC008D74B2 /* Zipcodes.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7C19215E187EDEAC008D74B2 /* Zipcodes.sqlite */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7C192111187B0A41008D74B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C1920E0187B0A41008D74B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C1920E7187B0A41008D74B2;
+			remoteInfo = "NOAA Forecast Kit";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7C1920E8187B0A41008D74B2 /* NOAA Forecast Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NOAA Forecast Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C1920EB187B0A41008D74B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7C1920ED187B0A41008D74B2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7C1920EF187B0A41008D74B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7C1920F3187B0A41008D74B2 /* NOAA Forecast Kit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NOAA Forecast Kit-Info.plist"; sourceTree = "<group>"; };
+		7C1920F5187B0A41008D74B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7C1920F7187B0A41008D74B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7C1920F9187B0A41008D74B2 /* NOAA Forecast Kit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NOAA Forecast Kit-Prefix.pch"; sourceTree = "<group>"; };
+		7C1920FA187B0A41008D74B2 /* FKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FKAppDelegate.h; sourceTree = "<group>"; };
+		7C1920FB187B0A41008D74B2 /* FKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FKAppDelegate.m; sourceTree = "<group>"; };
+		7C192103187B0A41008D74B2 /* FKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FKViewController.h; sourceTree = "<group>"; };
+		7C192104187B0A41008D74B2 /* FKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FKViewController.m; sourceTree = "<group>"; };
+		7C192106187B0A41008D74B2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7C19210C187B0A41008D74B2 /* NOAA Forecast KitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NOAA Forecast KitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C19210D187B0A41008D74B2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7C192115187B0A41008D74B2 /* NOAA Forecast KitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NOAA Forecast KitTests-Info.plist"; sourceTree = "<group>"; };
+		7C192117187B0A41008D74B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7C192119187B0A41008D74B2 /* NOAA_Forecast_KitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NOAA_Forecast_KitTests.m; sourceTree = "<group>"; };
+		7C192139187BA514008D74B2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7C19214B187EA43E008D74B2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7C192150187EDEAC008D74B2 /* FKDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKDataManager.h; sourceTree = "<group>"; };
+		7C192151187EDEAC008D74B2 /* FKDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKDataManager.m; sourceTree = "<group>"; };
+		7C192153187EDEAC008D74B2 /* FKDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FKDataModel.xcdatamodel; sourceTree = "<group>"; };
+		7C192154187EDEAC008D74B2 /* FKForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKForecast.h; sourceTree = "<group>"; };
+		7C192155187EDEAC008D74B2 /* FKForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKForecast.m; sourceTree = "<group>"; };
+		7C192156187EDEAC008D74B2 /* FKForecastRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKForecastRequester.h; sourceTree = "<group>"; };
+		7C192157187EDEAC008D74B2 /* FKForecastRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKForecastRequester.m; sourceTree = "<group>"; };
+		7C192158187EDEAC008D74B2 /* FKLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKLocation.h; sourceTree = "<group>"; };
+		7C192159187EDEAC008D74B2 /* FKLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKLocation.m; sourceTree = "<group>"; };
+		7C19215A187EDEAC008D74B2 /* FKResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKResponseParser.h; sourceTree = "<group>"; };
+		7C19215B187EDEAC008D74B2 /* FKResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKResponseParser.m; sourceTree = "<group>"; };
+		7C19215C187EDEAC008D74B2 /* FKStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKStore.h; sourceTree = "<group>"; };
+		7C19215D187EDEAC008D74B2 /* FKStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKStore.m; sourceTree = "<group>"; };
+		7C19215E187EDEAC008D74B2 /* Zipcodes.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zipcodes.sqlite; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7C1920E5187B0A41008D74B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C19214C187EA43E008D74B2 /* CoreLocation.framework in Frameworks */,
+				7C19213A187BA514008D74B2 /* CoreData.framework in Frameworks */,
+				7C1920EE187B0A41008D74B2 /* CoreGraphics.framework in Frameworks */,
+				7C1920F0187B0A41008D74B2 /* UIKit.framework in Frameworks */,
+				7C1920EC187B0A41008D74B2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C192109187B0A41008D74B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C19210E187B0A41008D74B2 /* XCTest.framework in Frameworks */,
+				7C192110187B0A41008D74B2 /* UIKit.framework in Frameworks */,
+				7C19210F187B0A41008D74B2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7C1920DF187B0A41008D74B2 = {
+			isa = PBXGroup;
+			children = (
+				7C1920F1187B0A41008D74B2 /* NOAA Forecast Kit */,
+				7C192113187B0A41008D74B2 /* NOAA Forecast KitTests */,
+				7C1920EA187B0A41008D74B2 /* Frameworks */,
+				7C1920E9187B0A41008D74B2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7C1920E9187B0A41008D74B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7C1920E8187B0A41008D74B2 /* NOAA Forecast Kit.app */,
+				7C19210C187B0A41008D74B2 /* NOAA Forecast KitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7C1920EA187B0A41008D74B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C19214B187EA43E008D74B2 /* CoreLocation.framework */,
+				7C192139187BA514008D74B2 /* CoreData.framework */,
+				7C1920EB187B0A41008D74B2 /* Foundation.framework */,
+				7C1920ED187B0A41008D74B2 /* CoreGraphics.framework */,
+				7C1920EF187B0A41008D74B2 /* UIKit.framework */,
+				7C19210D187B0A41008D74B2 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C1920F1187B0A41008D74B2 /* NOAA Forecast Kit */ = {
+			isa = PBXGroup;
+			children = (
+				7C19214F187EDEAC008D74B2 /* NOAAForecastKit */,
+				7C1920FA187B0A41008D74B2 /* FKAppDelegate.h */,
+				7C1920FB187B0A41008D74B2 /* FKAppDelegate.m */,
+				7C192103187B0A41008D74B2 /* FKViewController.h */,
+				7C192104187B0A41008D74B2 /* FKViewController.m */,
+				7C192106187B0A41008D74B2 /* Images.xcassets */,
+				7C1920F2187B0A41008D74B2 /* Supporting Files */,
+			);
+			path = "NOAA Forecast Kit";
+			sourceTree = "<group>";
+		};
+		7C1920F2187B0A41008D74B2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7C1920F3187B0A41008D74B2 /* NOAA Forecast Kit-Info.plist */,
+				7C1920F4187B0A41008D74B2 /* InfoPlist.strings */,
+				7C1920F7187B0A41008D74B2 /* main.m */,
+				7C1920F9187B0A41008D74B2 /* NOAA Forecast Kit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7C192113187B0A41008D74B2 /* NOAA Forecast KitTests */ = {
+			isa = PBXGroup;
+			children = (
+				7C192119187B0A41008D74B2 /* NOAA_Forecast_KitTests.m */,
+				7C192114187B0A41008D74B2 /* Supporting Files */,
+			);
+			path = "NOAA Forecast KitTests";
+			sourceTree = "<group>";
+		};
+		7C192114187B0A41008D74B2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7C192115187B0A41008D74B2 /* NOAA Forecast KitTests-Info.plist */,
+				7C192116187B0A41008D74B2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7C19214F187EDEAC008D74B2 /* NOAAForecastKit */ = {
+			isa = PBXGroup;
+			children = (
+				7C192150187EDEAC008D74B2 /* FKDataManager.h */,
+				7C192151187EDEAC008D74B2 /* FKDataManager.m */,
+				7C192152187EDEAC008D74B2 /* FKDataModel.xcdatamodeld */,
+				7C192154187EDEAC008D74B2 /* FKForecast.h */,
+				7C192155187EDEAC008D74B2 /* FKForecast.m */,
+				7C192156187EDEAC008D74B2 /* FKForecastRequester.h */,
+				7C192157187EDEAC008D74B2 /* FKForecastRequester.m */,
+				7C192158187EDEAC008D74B2 /* FKLocation.h */,
+				7C192159187EDEAC008D74B2 /* FKLocation.m */,
+				7C19215A187EDEAC008D74B2 /* FKResponseParser.h */,
+				7C19215B187EDEAC008D74B2 /* FKResponseParser.m */,
+				7C19215C187EDEAC008D74B2 /* FKStore.h */,
+				7C19215D187EDEAC008D74B2 /* FKStore.m */,
+				7C19215E187EDEAC008D74B2 /* Zipcodes.sqlite */,
+			);
+			name = NOAAForecastKit;
+			path = ../../NOAAForecastKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7C1920E7187B0A41008D74B2 /* NOAA Forecast Kit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C19211D187B0A41008D74B2 /* Build configuration list for PBXNativeTarget "NOAA Forecast Kit" */;
+			buildPhases = (
+				7C1920E4187B0A41008D74B2 /* Sources */,
+				7C1920E5187B0A41008D74B2 /* Frameworks */,
+				7C1920E6187B0A41008D74B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NOAA Forecast Kit";
+			productName = "NOAA Forecast Kit";
+			productReference = 7C1920E8187B0A41008D74B2 /* NOAA Forecast Kit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7C19210B187B0A41008D74B2 /* NOAA Forecast KitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C192120187B0A41008D74B2 /* Build configuration list for PBXNativeTarget "NOAA Forecast KitTests" */;
+			buildPhases = (
+				7C192108187B0A41008D74B2 /* Sources */,
+				7C192109187B0A41008D74B2 /* Frameworks */,
+				7C19210A187B0A41008D74B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7C192112187B0A41008D74B2 /* PBXTargetDependency */,
+			);
+			name = "NOAA Forecast KitTests";
+			productName = "NOAA Forecast KitTests";
+			productReference = 7C19210C187B0A41008D74B2 /* NOAA Forecast KitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7C1920E0187B0A41008D74B2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FK;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Joseph Chen";
+				TargetAttributes = {
+					7C19210B187B0A41008D74B2 = {
+						TestTargetID = 7C1920E7187B0A41008D74B2;
+					};
+				};
+			};
+			buildConfigurationList = 7C1920E3187B0A41008D74B2 /* Build configuration list for PBXProject "NOAA Forecast Kit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7C1920DF187B0A41008D74B2;
+			productRefGroup = 7C1920E9187B0A41008D74B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7C1920E7187B0A41008D74B2 /* NOAA Forecast Kit */,
+				7C19210B187B0A41008D74B2 /* NOAA Forecast KitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7C1920E6187B0A41008D74B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C192166187EDEAC008D74B2 /* Zipcodes.sqlite in Resources */,
+				7C192107187B0A41008D74B2 /* Images.xcassets in Resources */,
+				7C1920F6187B0A41008D74B2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C19210A187B0A41008D74B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C192118187B0A41008D74B2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7C1920E4187B0A41008D74B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C192162187EDEAC008D74B2 /* FKForecastRequester.m in Sources */,
+				7C1920F8187B0A41008D74B2 /* main.m in Sources */,
+				7C19215F187EDEAC008D74B2 /* FKDataManager.m in Sources */,
+				7C192160187EDEAC008D74B2 /* FKDataModel.xcdatamodeld in Sources */,
+				7C192164187EDEAC008D74B2 /* FKResponseParser.m in Sources */,
+				7C192165187EDEAC008D74B2 /* FKStore.m in Sources */,
+				7C192163187EDEAC008D74B2 /* FKLocation.m in Sources */,
+				7C192161187EDEAC008D74B2 /* FKForecast.m in Sources */,
+				7C1920FC187B0A41008D74B2 /* FKAppDelegate.m in Sources */,
+				7C192105187B0A41008D74B2 /* FKViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C192108187B0A41008D74B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C19211A187B0A41008D74B2 /* NOAA_Forecast_KitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7C192112187B0A41008D74B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7C1920E7187B0A41008D74B2 /* NOAA Forecast Kit */;
+			targetProxy = 7C192111187B0A41008D74B2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7C1920F4187B0A41008D74B2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C1920F5187B0A41008D74B2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7C192116187B0A41008D74B2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C192117187B0A41008D74B2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7C19211B187B0A41008D74B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7C19211C187B0A41008D74B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7C19211E187B0A41008D74B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/joseph/git/NOAAForecastKit/NOAA\\ Forecast\\ Kit",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NOAA Forecast Kit/NOAA Forecast Kit-Prefix.pch";
+				INFOPLIST_FILE = "NOAA Forecast Kit/NOAA Forecast Kit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7C19211F187B0A41008D74B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/joseph/git/NOAAForecastKit/NOAA\\ Forecast\\ Kit",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NOAA Forecast Kit/NOAA Forecast Kit-Prefix.pch";
+				INFOPLIST_FILE = "NOAA Forecast Kit/NOAA Forecast Kit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7C192121187B0A41008D74B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NOAA Forecast Kit.app/NOAA Forecast Kit";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NOAA Forecast Kit/NOAA Forecast Kit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NOAA Forecast KitTests/NOAA Forecast KitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7C192122187B0A41008D74B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NOAA Forecast Kit.app/NOAA Forecast Kit";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NOAA Forecast Kit/NOAA Forecast Kit-Prefix.pch";
+				INFOPLIST_FILE = "NOAA Forecast KitTests/NOAA Forecast KitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7C1920E3187B0A41008D74B2 /* Build configuration list for PBXProject "NOAA Forecast Kit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C19211B187B0A41008D74B2 /* Debug */,
+				7C19211C187B0A41008D74B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7C19211D187B0A41008D74B2 /* Build configuration list for PBXNativeTarget "NOAA Forecast Kit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C19211E187B0A41008D74B2 /* Debug */,
+				7C19211F187B0A41008D74B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7C192120187B0A41008D74B2 /* Build configuration list for PBXNativeTarget "NOAA Forecast KitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C192121187B0A41008D74B2 /* Debug */,
+				7C192122187B0A41008D74B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7C192152187EDEAC008D74B2 /* FKDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7C192153187EDEAC008D74B2 /* FKDataModel.xcdatamodel */,
+			);
+			currentVersion = 7C192153187EDEAC008D74B2 /* FKDataModel.xcdatamodel */;
+			path = FKDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7C1920E0187B0A41008D74B2 /* Project object */;
+}
