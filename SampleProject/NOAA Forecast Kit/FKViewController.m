@@ -13,15 +13,12 @@
 #import "FKLocation.h"
 
 @interface FKViewController () <UIAlertViewDelegate, UITableViewDataSource>
-
 @property (strong, nonatomic) UIToolbar *toolbar;
 @property (strong, nonatomic) UITableView *tableview;
 @property (strong, nonatomic) NSArray *forecasts;
 @property (strong, nonatomic) NSString *forecastsTitle;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
-
 @end
-
 
 typedef enum {
     FKViewControllerSubviewInvalid,
@@ -29,6 +26,19 @@ typedef enum {
 } FKViewControllerSubview;
 
 @implementation FKViewController
+
+#if !__has_feature(objc_arc)
+- (void)dealloc
+{
+    [_toolbar release];
+    [_tableview release];
+    [_forecasts release];
+    [_forecastsTitle release];
+    [_dateFormatter release];
+    
+    [super dealloc];
+}
+#endif
 
 - (NSDateFormatter *)dateFormatter
 {
@@ -41,9 +51,23 @@ typedef enum {
 
 - (UIBarButtonItem *)spaceItem
 {
-    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                         target:nil
-                                                         action:nil];
+
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:   UIBarButtonSystemItemFlexibleSpace
+                                                                          target:nil
+                                                                          action:nil];
+#if !__has_feature(objc_arc)
+    return [item autorelease];
+#else
+    return item;
+#endif
+}
+
+- (void)viewDidUnload
+{
+    self.toolbar = nil;
+    self.tableview = nil;
+    
+    [super viewDidUnload];
 }
 
 - (void)viewDidLoad
@@ -63,6 +87,11 @@ typedef enum {
                                                                    target:self
                                                                    action:@selector(tappedForecastForZipcodeItem:)];
     [_toolbar setItems:@[[self spaceItem], currentLocationItem, [self spaceItem], zipcodeItem, [self spaceItem]]];
+    
+#if !__has_feature(objc_arc)
+    [currentLocationItem release];
+    [zipcodeItem release];
+#endif
     
     _tableview = [[UITableView alloc] initWithFrame:CGRectZero
                                               style:UITableViewStyleGrouped];
@@ -107,6 +136,10 @@ typedef enum {
     zipcodeAlert.tag = FKViewControllerSubviewZipcodeAlert;
     zipcodeAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [zipcodeAlert show];
+    
+#if !__has_feature(objc_arc)
+    [zipcodeAlert release];
+#endif
 }
 
 - (void)requestForecastsForZipcode:(NSString *)zipcode
@@ -177,6 +210,9 @@ typedef enum {
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:reuseIdentifier];
+#if !__has_feature(objc_arc)
+        [cell autorelease];
+#endif
     }
 
     FKForecast *forecast = [self.forecasts objectAtIndex:indexPath.row];

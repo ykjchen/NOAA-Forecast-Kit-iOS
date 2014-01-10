@@ -79,6 +79,23 @@ NSTimeInterval const FKDataManagerLocationUpdateInterval = 300.0;
     return self;
 }
 
+#if !__has_feature(objc_arc)
+- (id)retain
+{
+    return self;
+}
+
+- (oneway void)release
+{
+    // Do nothing
+}
+
+- (NSUInteger)retainCount
+{
+    return NSUIntegerMax;
+}
+#endif
+
 #pragma mark - Accessors
 
 - (FKStore *)store

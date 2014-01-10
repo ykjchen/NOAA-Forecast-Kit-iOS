@@ -20,6 +20,10 @@
     FKViewController *vc = [[FKViewController alloc] init];
     self.window.rootViewController = vc;
     
+#if !__has_feature(objc_arc)
+    [vc release];
+#endif
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

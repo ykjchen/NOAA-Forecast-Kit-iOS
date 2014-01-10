@@ -29,6 +29,21 @@
 
 @implementation FKResponseParser
 
+#if !__has_feature(objc_arc)
+- (void)dealloc
+{
+    [_dateFormatter release];
+    [_parser release];
+    [_forecasts release];
+    [_currentElement release];
+    [_currentParentElement release];
+    [_currentElementValue release];
+    [_rootElement release];
+    
+    [super dealloc];
+}
+#endif
+
 - (NSDateFormatter *)dateFormatter
 {
     if (!_dateFormatter) {
@@ -37,6 +52,10 @@
         NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
         _dateFormatter.locale = enUSPOSIXLocale;
         _dateFormatter.dateFormat = @"yyyy'-'MM'-'dd'T'HH':'mm':'ss";
+        
+#if !__has_feature(objc_arc)
+        [enUSPOSIXLocale release];
+#endif
     }
     return _dateFormatter;
 }
@@ -264,6 +283,9 @@
     self.parser = parser;
     parser.delegate = self;
     [parser parse];
+#if !__has_feature(objc_arc)
+    [parser release];
+#endif
     
     return YES;
 }
@@ -304,11 +326,19 @@
         attribute.name = attributeKey;
         attribute.value = [attributeDict objectForKey:attributeKey];
         [newElement.attributes addObject:attribute];
+        
+#if !__has_feature(objc_arc)
+        [attribute release];
+#endif
     }
     
     if (!self.rootElement) {
         self.rootElement = newElement;
     }
+    
+#if !__has_feature(objc_arc)
+    [newElement release];
+#endif
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
@@ -364,6 +394,17 @@
 #pragma mark - Schema Objects
 
 @implementation FKSchemaItem
+
+#if !__has_feature(objc_arc)
+- (void)dealloc
+{
+    [_name release];
+    [_value release];
+    
+    [super dealloc];
+}
+#endif
+
 @end
 
 @implementation FKSchemaAttribute
@@ -375,6 +416,16 @@
 @end
 
 @implementation FKSchemaElement
+
+#if !__has_feature(objc_arc)
+- (void)dealloc
+{
+    [_children release];
+    [_attributes release];
+    
+    [super dealloc];
+}
+#endif
 
 - (NSMutableArray *)children
 {

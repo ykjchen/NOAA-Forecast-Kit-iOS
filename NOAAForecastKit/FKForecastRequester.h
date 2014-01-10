@@ -19,7 +19,7 @@
 
 @interface FKForecastRequester : NSObject
 
-@property (weak, nonatomic) id<FKForecastRequesterDelegate> delegate;
+@property (unsafe_unretained, nonatomic) id<FKForecastRequesterDelegate> delegate;
 
 - (BOOL)requestForecastsForLatitude:(float)latitude
                           longitude:(float)longitude

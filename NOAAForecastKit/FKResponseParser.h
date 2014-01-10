@@ -10,15 +10,12 @@
 
 @class FKResponseParser;
 @protocol FKResponseParserDelegate <NSObject>
-
 - (void)responseParser:(FKResponseParser *)parser parsedForecasts:(NSArray *)forecasts;
 - (void)responseParser:(FKResponseParser *)parser didFailWithError:(NSError *)error;
-
 @end
 
 @interface FKResponseParser : NSObject
-@property (weak, nonatomic) id<FKResponseParserDelegate> delegate;
-
+@property (unsafe_unretained, nonatomic) id<FKResponseParserDelegate> delegate;
 - (BOOL)parseResponse:(NSData *)responseData;
 @end
 
@@ -31,15 +28,12 @@
 @end
 
 @interface FKSchemaElement : FKSchemaItem
-
-@property (weak, nonatomic) FKSchemaElement *parent;
+@property (unsafe_unretained, nonatomic) FKSchemaElement *parent;
 @property (nonatomic, readonly) NSMutableArray *children;
 @property (nonatomic, readonly) NSMutableSet *attributes;
-
 - (FKSchemaElement *)childWithName:(NSString *)elementName;
 - (FKSchemaElement *)childWithName:(NSString *)elementName attribute:(NSString *)attributeName attributeValue:(NSString *)attributeValue;
 - (FKSchemaAttribute *)attributeWithName:(NSString *)attributeName;
 - (NSInteger)countOfChildren;
 - (NSInteger)countOfAttributes;
-
 @end

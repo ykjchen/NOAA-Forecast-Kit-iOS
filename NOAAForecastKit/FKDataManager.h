@@ -19,11 +19,11 @@ typedef struct
 
 + (FKDataManager *)sharedManager;
 
-- (BOOL)requestForecastsForCurrentLocationWithCompletion:(void (^)(NSArray *forecasts, NSError *error))completionHandler
-                                                   error:(NSError *__autoreleasing *)preRequestError;
-- (BOOL)requestForecastsForZipcode:(NSString *)zipcode
-                        completion:(void (^)(NSArray *forecasts, NSError *error))completionHandler
-                             error:(NSError *__autoreleasing *)preRequestError;
+    - (BOOL)requestForecastsForCurrentLocationWithCompletion:(void (^)(NSArray *forecasts, NSError *error))completionHandler
+                                                       error:(NSError *__autoreleasing *)preRequestError;
+    - (BOOL)requestForecastsForZipcode:(NSString *)zipcode
+                            completion:(void (^)(NSArray *forecasts, NSError *error))completionHandler
+                                 error:(NSError *__autoreleasing *)preRequestError;
 
 - (FKForecast *)forecastForGeoposition:(FKGeoposition)geoposition date:(NSDate *)date;
 - (FKLocation *)locationForZipcode:(NSString *)zipcode;

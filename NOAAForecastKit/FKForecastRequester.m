@@ -24,7 +24,11 @@
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url
                                                   cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                               timeoutInterval:60.0];
+#if !__has_feature(objc_arc)
+    return [request autorelease];
+#else
     return request;
+#endif
 }
 
 - (void)failWithError:(NSError *)error
@@ -54,6 +58,10 @@
     
     FKURLConnection *urlConnection = [[FKURLConnection alloc] initWithRequest:[self urlRequestForLatitude:latitude longitude:longitude]
                                                                      delegate:self];
+#if !__has_feature(objc_arc)
+    [urlConnection autorelease];
+#endif
+    
     [urlConnection start];
     return YES;
 }
@@ -89,5 +97,13 @@
 @end
 
 @implementation FKURLConnection
+#if !__has_feature(objc_arc)
+- (void)dealloc
+{
+    [_data release];
+    
+    [super dealloc];
+}
+#endif
 @end
 

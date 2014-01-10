@@ -68,6 +68,17 @@ NSString *FKPathInDataDirectory(NSString *fileName)
 
 @implementation FKStore
 
+#if !__has_feature(objc_arc)
+- (void)dealloc
+{
+    [_context release];
+    [_persistentStoreCoordinator release];
+    [_model release];
+    
+    [super dealloc];
+}
+#endif
+
 - (id)init
 {
     if ((self = [super init])) {
