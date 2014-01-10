@@ -12,6 +12,7 @@ by current location or zipcode. The code can be extended if other data is requir
 
 The project uses zipcode data from [CivicSpace Labs, Inc.](http://www.boutell.com/zipcodes/), which is released under a [Creative Commons Attribution-ShareAlike license](http://creativecommons.org/licenses/by-sa/2.0/).
 
+ARC and non-ARC supported.
 
 ###Add to your project
 1. Link `CoreData.framework` and `CoreLocation.framework`.
