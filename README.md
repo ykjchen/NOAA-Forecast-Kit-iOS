@@ -53,7 +53,13 @@ If the request is successful, a `NSArray` of 7 `FKForecast` objects is returned.
 
     - (FKLocation *)locationForZipcode:(NSString *)zipcode;
     
-This method returns nil if the zipcode passed in is not within the database shipped in the bundle (`Zipcodes.sqlite`). 
+This method returns nil if the zipcode passed in is not within the database shipped in the bundle (`Zipcodes.sqlite`). Otherwise it returns an `FKLocation` object which has the following properties:
+
+    @property (nonatomic, retain) NSNumber * zipcode;
+    @property (nonatomic, retain) NSString * state;         // two-letter abbreviation
+    @property (nonatomic, retain) NSNumber * longitude;
+    @property (nonatomic, retain) NSNumber * latitude;
+    @property (nonatomic, retain) NSString * city;          // city name
 
 ###Customization
 
