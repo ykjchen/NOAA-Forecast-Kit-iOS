@@ -9,7 +9,6 @@
 
 #import "FKResponseParser.h"
 
-#import "FKDataManager.h"
 #import "FKForecast.h"
 
 @interface FKResponseParser () <NSXMLParserDelegate>
@@ -17,7 +16,8 @@
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
 @property (strong, nonatomic) NSXMLParser *parser;
 
-@property (nonatomic) FKGeoposition geoposition;
+@property (nonatomic) float latitude;
+@property (nonatomic) float longitude;
 @property (strong, nonatomic) NSMutableArray *forecasts;
 
 @property (strong, nonatomic) FKSchemaElement *currentElement;
@@ -109,12 +109,18 @@
     return _forecasts;
 }
 
-- (FKForecast *)addForecastWithDate:(NSDate *)date
+- (BOOL)addForecastWithDate:(NSDate *)date
 {
-    FKForecast *forecast = [[FKDataManager sharedManager] forecastForGeoposition:self.geoposition date:date];
-    forecast.fetchDate = [NSDate date];
-    [self.forecasts addObject:forecast];
-    return forecast;
+    if (self.dataSource && [self.dataSource conformsToProtocol:@protocol(FKResponseParserDataSource)] && [self.dataSource respondsToSelector:@selector(forecastForLatitude:longitude:date:)]) {
+        FKForecast *forecast = [self.dataSource forecastForLatitude:self.latitude
+                                                          longitude:self.longitude
+                                                               date:date];
+        forecast.fetchDate = [NSDate date];
+        [self.forecasts addObject:forecast];
+        return YES;
+    }
+    
+    return NO;
 }
 
 - (FKForecast *)forecastAtIndex:(NSInteger)index
@@ -129,10 +135,8 @@
     FKSchemaElement *location = [dataElement childWithName:@"location"];
     FKSchemaElement *point = [location childWithName:@"point"];
     
-    FKGeoposition geoposition;
-    geoposition.latitude = [[[point attributeWithName:@"latitude"] value] floatValue];
-    geoposition.longitude = [[[point attributeWithName:@"longitude"] value] floatValue];
-    self.geoposition = geoposition;
+    self.latitude = [[[point attributeWithName:@"latitude"] value] floatValue];
+    self.longitude = [[[point attributeWithName:@"longitude"] value] floatValue];
 }
 
 - (void)setTimeLayoutFromDataElement:(FKSchemaElement *)dataElement
@@ -148,7 +152,10 @@
     for (FKSchemaElement *child in timeLayout.children) {
         if ([child.name isEqualToString:@"start-valid-time"]) {
             NSDate *date = [self dateFromDWMLDate:child.value];
-            [self addForecastWithDate:date];
+            if (![self addForecastWithDate:date]) {
+                [self failWithError:[self errorWithMessage:@"No valid dataSource found."]];
+                return;
+            }
         } else if ([child.name isEqualToString:@"end-valid-time"]) {
             FKForecast *forecast = [self forecastAtIndex:forecastIndex];
             forecast.endDate = [self dateFromDWMLDate:child.value];

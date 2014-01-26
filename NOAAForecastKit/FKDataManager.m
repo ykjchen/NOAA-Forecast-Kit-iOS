@@ -24,7 +24,7 @@
 
 static FKDataManager *_sharedManager = nil;
 
-@interface FKDataManager () <FKForecastRequesterDelegate, FKResponseParserDelegate, CLLocationManagerDelegate>
+@interface FKDataManager () <FKForecastRequesterDelegate, FKResponseParserDelegate, FKResponseParserDataSource, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) FKStore *store;
 @property (strong, nonatomic) FKForecastRequester *forecastRequester;
@@ -120,6 +120,7 @@ NSTimeInterval const FKDataManagerLocationUpdateInterval = 300.0;
     if (!_responseParser) {
         _responseParser = [[FKResponseParser alloc] init];
         _responseParser.delegate = self;
+        _responseParser.dataSource = self;
     }
     return _responseParser;
 }
@@ -231,11 +232,6 @@ NSTimeInterval const FKDataManagerLocationUpdateInterval = 300.0;
                                           error:preRequestError];
 }
 
-- (FKForecast *)forecastForGeoposition:(FKGeoposition)geoposition date:(NSDate *)date
-{
-    return [self.store forecastForLatitude:geoposition.latitude longitude:geoposition.longitude date:date];
-}
-
 - (FKLocation *)locationForZipcode:(NSString *)zipcode
 {
     return [self.store locationForZipcode:zipcode];
@@ -253,6 +249,13 @@ NSTimeInterval const FKDataManagerLocationUpdateInterval = 300.0;
     if (![self.responseParser parseResponse:responseData]) {
         [self failWithError:[self errorWithMessage:@"Could not start parser."]];
     }
+}
+
+#pragma mark - FKResponseParserDataSource
+
+- (FKForecast *)forecastForLatitude:(float)latitude longitude:(float)longitude date:(NSDate *)date
+{
+    return [self.store forecastForLatitude:latitude longitude:longitude date:date];
 }
 
 #pragma mark - FKResponseParserDelegate

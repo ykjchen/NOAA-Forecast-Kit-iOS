@@ -8,14 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-@class FKResponseParser;
+@class FKResponseParser, FKForecast;
 @protocol FKResponseParserDelegate <NSObject>
 - (void)responseParser:(FKResponseParser *)parser parsedForecasts:(NSArray *)forecasts;
 - (void)responseParser:(FKResponseParser *)parser didFailWithError:(NSError *)error;
 @end
 
+@protocol FKResponseParserDataSource <NSObject>
+@required
+- (FKForecast *)forecastForLatitude:(float)latitude longitude:(float)longitude date:(NSDate *)date;
+@end
+
 @interface FKResponseParser : NSObject
 @property (unsafe_unretained, nonatomic) id<FKResponseParserDelegate> delegate;
+@property (unsafe_unretained, nonatomic) id<FKResponseParserDataSource> dataSource;
 - (BOOL)parseResponse:(NSData *)responseData;
 @end
 
